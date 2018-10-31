@@ -1,0 +1,17 @@
+service: gmail-contacts
+
+provider:
+  name: aws
+  runtime: nodejs8.10
+  memorySize: 2028
+  timeout: 300
+  stage: 'prod'
+
+functions:
+  retrieve:
+    handler: index.handler
+    events:
+      - http:
+          path: retrieve
+          method: get
+          cors: true
