@@ -113,7 +113,10 @@ exports.handler = async event => {
   return {
     isBase64Encoded: false,
     statusCode: 200,
-    headers: {},
+    headers: {
+      'Content-Type': 'application/json',
+      'Access-Control-Allow-Origin': '*',
+    },
     body: JSON.stringify({contacts}),
   };
 };
